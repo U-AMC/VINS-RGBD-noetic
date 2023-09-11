@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(vins_estimator)
 
 set(CMAKE_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS "-std=c++11")
+set(CMAKE_CXX_FLAGS "-std=c++14")
 #-DEIGEN_USE_MKL_ALL")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall -g")
 
@@ -21,8 +21,8 @@ find_package(OpenCV REQUIRED)
 
 find_package(Ceres REQUIRED)
 
-#find_package( Sophus REQUIRED )
-#include_directories( ${Sophus_INCLUDE_DIRS} )
+find_package(Sophus REQUIRED )
+include_directories( ${Sophus_INCLUDE_DIRS} )
 
 include_directories(${catkin_INCLUDE_DIRS} ${CERES_INCLUDE_DIRS})
 
